@@ -1,0 +1,18 @@
+{% extends "tour/tour_base.html" %}
+{% block body_block %}
+  <div class="jumbotron">
+    <h1>Welcome to the Registered student's Detail Page</h1>
+    <h2>Student Details:</h2>
+    <p>Name: {{register_details.name}}</p>
+    <p>Roll: {{register_details.roll}}</p>
+    <p>Batch: {{register_details.batch}}</p>
+
+
+  </div>
+  <div class="container">
+    <p><a class='btn btn-warning' href="{% url 'tour:update' pk=register_details.pk %}">Update</a>
+      <a class='btn btn-danger' href="{% url 'tour:delete' pk=register_details.pk %}">Delete</a>
+    </p>
+  </div>
+
+{% endblock %}

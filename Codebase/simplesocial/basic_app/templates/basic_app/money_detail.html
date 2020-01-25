@@ -1,0 +1,19 @@
+{% extends "basic_app/basic_app_base.html" %}
+{% block body_block %}
+  <div class="jumbotron">
+    <h1>Welcome to the Student information Detail Page</h1>
+    <h2>Student Details:</h2>
+    <p>Name: {{money_details.name}}</p>
+    <p>Roll: {{money_details.roll}}</p>
+    <p>Amount: {{money_details.amount}}</p>
+    <p>Batch: {{money_details.batch}}</p>
+
+
+  </div>
+  <div class="container">
+    <p><a class='btn btn-warning' href="{% url 'basic_app:update' pk=money_details.pk %}">Update</a>
+      <a class='btn btn-danger' href="{% url 'basic_app:delete' pk=money_details.pk %}">Delete</a>
+    </p>
+  </div>
+
+{% endblock %}
