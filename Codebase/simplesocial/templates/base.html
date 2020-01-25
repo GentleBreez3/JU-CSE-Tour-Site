@@ -17,14 +17,17 @@
 
   </head>
   <body class='loader'>
-    <nav class="navbar navbar-expand-lg bg-light mynav" role="navigation" id="navbar">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mynav" role="navigation" id="navbar">
       <div class="container">
         <div class="navbar-nav align-items-center">
           <a class="navbar-brand mynav" href="{% url 'home' %}">
             <img height="50" width="50" src="{% static 'img/travel_logo.png' %}" alt="logo">
         </a>
         </div>
-        <div class="navbar-nav ml-auto">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+        <div class="navbar-nav ml-auto collapse navbar-collapse flex-grow-0" id="navbarsExampleDefault">
           {% if user.is_authenticated and request.user.is_superuser %}
             <a class="nav-item nav-link" href="{% url 'posts:create' %}" class="btn btn-simple">Post</a>
             <a class="nav-item nav-link" href="{% url 'groups:all' %}" class="btn btn-simple">Groups</a>
@@ -51,7 +54,7 @@
         </div>
       </div>
     </nav>
-
+    <p></p>
     <div class="container mycontent">
       {% block content %}
 
